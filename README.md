@@ -1,4 +1,4 @@
-# Name Sorter
+# Azure AI Document Analyser
 
 This is a .NET Core web application that provides features such as Document analysis, Image analysis and Resume analysis(Beta) powered by Azure AI.
 
