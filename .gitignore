@@ -1,0 +1,99 @@
+# Compiled source
+*.dll
+*.exe
+*.so
+*.dylib
+*.pdb
+*.mdb
+
+# Build directories
+bin/
+obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.csproj.user
+
+# Visual Studio
+.vs/
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Logs
+*.log
+*.tlog
+
+# DotNet CLI
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+packages/
+.nuget/
+
+# Debugging
+*.pidb
+*.sourcemap
+*.dotCover
+coverage.opencover.xml
+coverage.*.xml
+*.coverage
+
+# Transient files
+*.tmp
+*.temp
+~$*
+*~.tmp
+*~.temp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Generated files
+*.generated.cs
+*.g.i.cs
+*.g.cs
+
+# Deployment
+publish/
+*.deploy
+*.shproj
+
+# Global Assembly Info Cache
+.gac/
+
+# JetBrains Rider
+.idea/
+.idea_modules/
+*.sln.iml
+.idea.resharper/*
+
+# Additional Files
+*.bak
+*.old
+*.orig
+*.rej
+*.ruleset
+
+# Local history for IntelliJ-based IDEs
+/localhistory/
+
+# Windows
+*.bak~
+*.swp
+
+#Mac
+.DS_Store
