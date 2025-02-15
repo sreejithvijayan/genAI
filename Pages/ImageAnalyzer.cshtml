@@ -1,0 +1,87 @@
+﻿@page
+@model ImageAnalyzerModel
+@{
+    ViewData["Title"] = "Upload Document";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Analyse Your Image</h2>
+
+    <form method="post" enctype="multipart/form-data" class="mb-4">
+        <div class="form-group">
+            <label for="document" class="form-label">Choose an image to upload:</label>
+            <input type="file" class="form-control" id="document" name="document"
+                   accept=".jpeg,.jpg,.png" required />
+            <label for="document" class="form-label">Allowed file types : .jpeg,.jpg,.png</label>
+        </div>
+
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary btn-lg" id="submitbtn" onclick="showSpinner()">
+                <i class="fas fa-upload"></i> Upload
+                <span id="spinner" class="spinner-border spinner-border-sm" style="display:none;" role="status" aria-hidden="true"></span>
+            </button>
+        </div>
+    </form>
+
+    @if (Model.ImageUrl != null)
+    {
+        <div class="text-center">
+            <h4>Uploaded Image</h4>
+            <img src="@Model.ImageUrl" alt="Uploaded Image" class="img-thumbnail" style="max-width: 300px;" />
+        </div>
+    }
+<div class="container mt-5">
+    <div class="row">
+        @if (Model.Message != null)
+        {
+            <div class="col-md-12 text-center">
+                <div class="alert alert-success" style="white-space: pre-line;">  @Model.Message</div>
+            </div>
+        }
+        @if (Model.ErrorMessage != null)
+        {
+            <div class="col-md-12 text-center">
+                <div class="alert alert-danger" style="white-space: pre-line;">  @Model.ErrorMessage</div>
+            </div>
+        }
+    </div>
+    <div class="row">
+        @if (Model.ImageDetails != null)
+        {
+            <div class="col-md-4 text-center">
+                <div class="box" style="background-color: #FFB6C1;">  @Model.ImageDetails</div>
+            </div>
+        }
+
+
+        @if (Model.Objects != null)
+        {
+            <div class="col-md-4 text-center">
+                <div class="box" style="background-color: #E6E6FA;">@Model.Objects</div>
+            </div>
+        }
+        @if (Model.Tags != null)
+        {
+            <div class="col-md-4 text-center">
+                <div class="box" style="background-color: #B0E0E6;">@Model.Tags</div>
+            </div>
+        }
+    </div>
+    <div class="row">
+        @if (Model.Text != null)
+        {
+            <div class="col-md-12 text-center">
+                <div class="box" style="background-color: #FFDAB9;">@Model.Text</div>
+            </div>
+        }
+    </div>
+ </div>
+</div>
+
+        <!-- Add Bootstrap CDN and FontAwesome for icons and better styling -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script>function showSpinner() {
+                document.getElementById('spinner').style.display = 'inline-block';
+                document.getElementById('submitBtn').disabled = true;
+            }</script>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aidemo", "aidemo.csproj", "{7019BA23-F921-44E2-B85E-49D338F09648}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7019BA23-F921-44E2-B85E-49D338F09648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7019BA23-F921-44E2-B85E-49D338F09648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7019BA23-F921-44E2-B85E-49D338F09648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7019BA23-F921-44E2-B85E-49D338F09648}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03214E91-3989-4DF6-B9A8-3FC402F85374}
+	EndGlobalSection
+EndGlobal

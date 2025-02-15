@@ -1,0 +1,84 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Upload Document";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Analyse Your Document</h2>
+
+    <form method="post" enctype="multipart/form-data" class="mb-4">
+        <div class="form-group">
+            <label for="document" class="form-label">Choose a file to upload:</label>
+            <input type="file" class="form-control" id="document" name="document"
+                   accept=".pdf" required />
+            <label for="document" class="form-label">Allowed file types : .pdf</label>
+        </div>
+
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary btn-lg" id="submitbtn" onclick="showSpinner()">
+                <i class="fas fa-upload"></i> Upload
+                <span id="spinner" class="spinner-border spinner-border-sm" style="display:none;" role="status" aria-hidden="true"></span>
+            </button>
+        </div>
+    </form>
+
+
+    
+<div class="container mt-5">
+    <div class="row">
+        @if (Model.Message != null)
+        {
+            <div class="col-md-12 text-center">
+                <div class="alert alert-success" style="white-space: pre-line;">  @Model.Message</div>
+            </div>
+        }
+    </div>
+    <div class="row">
+        @if (Model.Language != null)
+        {
+            <div class="col-md-6 text-center">
+                <div class="box" style="background-color: #FFB6C1;">  @Model.Language</div>
+            </div>
+        }
+        @if (Model.Sentiment != null)
+        {
+            <div class="col-md-6 text-center">
+                <div class="box" style="background-color: #FFDAB9;">@Model.Sentiment</div>
+            </div>
+        }
+    </div>
+    <div class="row">
+        @if (Model.AbstractSummary != null)
+        {
+            <div class="col-md-8 text-center">
+                <div class="box" style="background-color: #E6E6FA;">@Model.AbstractSummary</div>
+            </div>
+        }
+        @if (Model.PiiInfo != null)
+        {
+            <div class="col-md-4 text-center">
+                <div class="box" style="background-color: #98FB98;">@Model.PiiInfo</div>
+            </div>
+        }
+    </div>
+    <div class="row">
+        @if (Model.KeyPhrases != null)
+        {
+            <div class="col-md-12 text-center">
+                <div class="box" style="background-color: #B0E0E6;">@Model.KeyPhrases</div>
+            </div>
+        }
+    </div>
+   </div>
+</div>
+<!-- Add Bootstrap CDN and FontAwesome for icons and better styling -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+
+    function showSpinner() {
+        document.getElementById('spinner').style.display = 'inline-block';
+        document.getElementById('submitBtn').disabled = true;
+    }
+</script>

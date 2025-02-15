@@ -1,0 +1,48 @@
+﻿@page
+@model ResumeAnalyserModel
+@{
+    ViewData["Title"] = "Analyse Resume";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Analyse Your Resume against a Job Description</h2>
+
+    <form method="post" enctype="multipart/form-data" class="mb-4">
+        <div class="form-group">
+            <label for="resumeFile" class="form-label">Choose a resume to upload:</label>
+            <input type="file" class="form-control" id="resumeFile" name="resumeFile"
+                   accept=".pdf,.doc,.docx" required />
+        </div>
+
+       
+        <div class="form-group">
+            <label for="jobDescriptionFile" class="form-label">Choose a job description to upload:</label>
+            <input type="file" class="form-control" id="jobDescriptionFile" name="jobDescriptionFile"
+                   accept=".pdf,.doc,.docx" required />
+        </div>
+
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary btn-lg" id="submitbtn" onclick="showSpinner()">
+                <i class="fas fa-upload"></i> Upload
+                <span id="spinner" class="spinner-border spinner-border-sm" style="display:none;" role="status" aria-hidden="true"></span>
+            </button>
+        </div>
+    </form>
+
+    
+
+    @if (Model.Message != null)
+    {
+        <div class="alert alert-success text-center mt-3" style="white-space: pre-line;">
+            @Model.Message
+        </div>
+    }
+</div>
+
+<!-- Add Bootstrap CDN and FontAwesome for icons and better styling -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>function showSpinner() {
+        document.getElementById('spinner').style.display = 'inline-block';
+        document.getElementById('submitBtn').disabled = true;
+    }</script>
