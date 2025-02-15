@@ -12,6 +12,7 @@ This is a .NET Core web application that provides features such as Document anal
 1. Clone the repository:
    ```bash
    git clone https://github.com/sreejithvijayan/genAI.git
+   cd genAI
 
 2. Restore the dependencies:
    ```bash
